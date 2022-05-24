@@ -35,7 +35,7 @@ app.get('/people/:sort', async (req, res) => {
     let page = 1;
     let result = {};
     while (page != null) {
-      const apiResponse = await fetch(`${urlApi}people/?page=${page}&sortBy=${sort}`)
+      const apiResponse = await fetch(`${urlApi}people/?page=${page}&sort=${sort}`)
       const apiResponseJson = await apiResponse.json()
       if (apiResponseJson.next != null){
         page = parseInt(apiResponseJson.next.slice(-1))
